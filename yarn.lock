@@ -11936,6 +11936,22 @@ react@^16.12.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
+reactjs-player@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npm.taobao.org/reactjs-player/download/reactjs-player-1.2.1.tgz#d83c39ff8e019e3936efb7375e1d6ca1f7c5a159"
+  integrity sha1-2Dw5/44Bnjk277c3Xh1soffFoVk=
+  dependencies:
+    "@reactjs-player/use-autoplay" "^1.2.1"
+    "@reactjs-player/use-flvjs" "^1.2.1"
+    "@reactjs-player/use-fullscreen" "^1.2.1"
+    "@reactjs-player/use-hlsjs" "^1.2.1"
+    "@reactjs-player/use-native" "^1.2.1"
+    "@reactjs-player/use-pip" "^1.2.1"
+    "@reactjs-player/use-playback-rate" "^1.2.1"
+    "@reactjs-player/use-state" "^1.2.1"
+    "@reactjs-player/use-time" "^1.2.1"
+    "@reactjs-player/use-volume" "^1.2.1"
+
 read-cmd-shim@^1.0.1:
   version "1.0.5"
   resolved "https://registry.npmjs.org/read-cmd-shim/-/read-cmd-shim-1.0.5.tgz#87e43eba50098ba5a32d0ceb583ab8e43b961c16"

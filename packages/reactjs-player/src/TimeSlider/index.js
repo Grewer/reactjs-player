@@ -75,6 +75,9 @@ MouseTooltip.propTypes = {
 };
 
 const Slider = React.memo(({ live, hiding, currentTime, duration, buffered, onChange, sliding, setSliding }) => {
+  if (live) {
+    return null;
+  }
   const [value, setValue] = React.useState(currentTime);
   const [tooltip, setTooltip] = React.useState(0);
 
