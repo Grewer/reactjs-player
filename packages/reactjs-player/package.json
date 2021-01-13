@@ -1,6 +1,6 @@
 {
   "name": "@grewer/reactjs-player",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "基于 react hooks 的 video 播放组件，结构简单，代码简洁，扩展方便。",
   "keywords": [
     "react",
@@ -17,13 +17,15 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
+  "typings": "src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/goblin-laboratory/reactjs-player.git"
   },
   "scripts": {
     "start": "rollup -c ./scripts/rollup.config.dev.js -w",
-    "build": "rollup -c ./scripts/rollup.config.prod.js"
+    "build": "rollup -c ./scripts/rollup.config.prod.js",
+    "pub": "npm publish --access=public"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.4.5",

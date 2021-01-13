@@ -30,6 +30,8 @@ const ReactjsPlayer = ({
   // autoPlay = true,
 
   className = '',
+  skinClassName = '',
+
   videoProps = null,
   playerProps = null,
   children = null,
@@ -70,6 +72,7 @@ const ReactjsPlayer = ({
           live,
           src,
           controls,
+          skinClassName,
           ...stateProps,
           ...timeProps,
           ...volumeProps,
@@ -99,6 +102,7 @@ ReactjsPlayer.propTypes = {
   // autoPlay: PropTypes.bool,
 
   className: PropTypes.string,
+  skinClassName: PropTypes.string,
   videoProps: PropTypes.object,
   playerProps: PropTypes.object,
 
@@ -115,6 +119,7 @@ ReactjsPlayer.defaultProps = {
   // autoPlay: true,
 
   className: '',
+  skinClassName: '',
   videoProps: null,
   playerProps: null,
 

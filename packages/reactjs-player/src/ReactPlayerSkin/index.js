@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import numeral from 'numeral';
-import { Slider, Dropdown, Menu } from 'antd';
+import { Dropdown, Menu, Slider } from 'antd';
 import Icon, {
-  LoadingOutlined,
-  PlayCircleOutlined,
   CaretRightOutlined,
-  PauseOutlined,
   FullscreenExitOutlined,
   FullscreenOutlined,
+  LoadingOutlined,
+  PauseOutlined,
+  PlayCircleOutlined,
 } from '@ant-design/icons';
 
 import TimeSlider from '../TimeSlider';
@@ -25,7 +25,6 @@ const ReactPlayerSkin = React.memo(
   ({
     live,
     src,
-    prevented,
     loading,
     paused,
     ended,
@@ -51,6 +50,7 @@ const ReactPlayerSkin = React.memo(
     requestFullscreen,
     exitFullscreen,
     kernelMsg,
+    skinClassName,
   }) => {
     const [hovering, setHovering] = React.useState(false);
     const [sliding, setSliding] = React.useState(false);
@@ -101,13 +101,12 @@ const ReactPlayerSkin = React.memo(
       return () => global.clearTimeout(id);
     }, [hiding, hovering, sliding, visible]);
 
-    const l = loading || (src && 0 === duration && 0 === currentTime && !prevented);
+    const l = loading || (src && 0 === duration && 0 === currentTime);
 
-    const playing = !prevented && !paused && !ended;
+    const playing = !paused && !ended;
 
     return (
-      <div className={styles.reactPlayerSkin}>
-        {src && prevented && <div className={styles.preventedTip}>视频播放被阻止</div>}
+      <div className={`${styles.reactPlayerSkin} ${skinClassName}`}>
         <div
           className={hiding ? styles.hiddenControlsBg : styles.controlsBg}
           style={{ backgroundImage: `url(${bgImg})` }}
@@ -123,7 +122,7 @@ const ReactPlayerSkin = React.memo(
             <LoadingOutlined />
           </div>
         )}
-        {src && !l && (prevented || paused || ended) && (
+        {src && !l && (paused || ended) && (
           <button type="button" className={styles.ended} onClick={onPlayClick}>
             <PlayCircleOutlined />
           </button>
@@ -236,7 +235,7 @@ const ReactPlayerSkin = React.memo(
 ReactPlayerSkin.propTypes = {
   live: PropTypes.bool,
   src: PropTypes.string,
-  prevented: PropTypes.bool.isRequired,
+  skinClassName: PropTypes.string.isRequired,
   // controls: PropTypes.bool.isRequired,
   // state
   loading: PropTypes.bool.isRequired,
